@@ -20,7 +20,11 @@ function compute()
         + "in the year " + "<mark>" + futureDate.toString() + "</mark>,<br>"; //form the shown text
 
     let result = document.getElementById("result");
+    while(result.hasChildNodes()) {
+        result.removeChild(result.firstChild);
+    }
     result.appendChild(resultText); //using js to dynamically plug in the resultText
+    result.children[0] = resultText;
 }
 
 function displayInterest(val){
